@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:peliculas/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
 
@@ -16,7 +17,14 @@ class DetailsScreen extends StatelessWidget {
                     _CustomAppBar(),
                     SliverList(
                         delegate: SliverChildListDelegate([
-                            _PosterAndTitle()
+                            _PosterAndTitle(),
+                            _Overview(),
+                            _Overview(),
+                            _Overview(),
+                            _Overview(),
+                            _Overview(),
+                            _Overview(),
+                            CastingCards()
                         ])
                     )
                 ],
@@ -40,6 +48,7 @@ class _CustomAppBar extends StatelessWidget {
                 title: Container(
                     width: double.infinity,
                     alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 10),
                     color: Colors.black12,
                     child: Text(
                         'movie.title',
@@ -96,6 +105,21 @@ class _PosterAndTitle extends StatelessWidget {
                         ],
                     )
                 ]
+            ),
+        );
+    }
+}
+
+class _Overview extends StatelessWidget {
+
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            child: Text(
+                'Irure reprehenderit cillum qui veniam incididunt duis officia reprehenderit. Irure velit laborum dolor velit irure culpa fugiat aliquip veniam qui in qui minim. Aliqua aute duis aliqua occaecat. Enim labore eiusmod Lorem voluptate duis in sunt officia nisi dolor fugiat. Ullamco voluptate fugiat velit qui consequat est nisi pariatur cillum voluptate excepteur enim irure excepteur.',
+                textAlign: TextAlign.justify,
+                style: Theme.of(context).textTheme.subtitle1,
             ),
         );
     }
