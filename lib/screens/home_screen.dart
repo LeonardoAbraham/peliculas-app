@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
 
+    
+
     @override
     Widget build(BuildContext context) {
 
@@ -30,7 +32,10 @@ class HomeScreen extends StatelessWidget {
                         CardSwiper( movies: moviesProvider.onDisplayMovies ),
 
                         // Listado horizontal de películas
-                        MovieSlider(),
+                        MovieSlider(
+                            movies:moviesProvider.popularMovies,
+                            title:'Populares'
+                        ),
                     ],
                 )
             )
